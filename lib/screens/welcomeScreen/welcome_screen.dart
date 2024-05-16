@@ -29,7 +29,7 @@ class _WelcomeScreensState extends State<WelcomeScreens> {
                 fit: BoxFit.cover,
               ),
               const Positioned(
-                top: 360,
+                top: 365,
                 left: 50,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -89,13 +89,15 @@ class _WelcomeScreensState extends State<WelcomeScreens> {
                           height: 48,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                              padding:
+                              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(100)),
                               backgroundColor: const Color(0xFFA6FF00),
                             ),
                             onPressed: () {
-                              Get.to(
-                                const SignUpWithEmail(),
-                                transition: Transition.rightToLeftWithFade
-                              );
+                              Get.to(const SignUpWithEmail(),
+                                  transition: Transition.rightToLeftWithFade);
                             },
                             child: const Text(
                               'Sign Up',
@@ -117,7 +119,11 @@ class _WelcomeScreensState extends State<WelcomeScreens> {
                           height: 48,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                                padding:
+                                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                                 backgroundColor: Colors.transparent,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(100)),
                                 side:
                                     const BorderSide(color: Color(0xFFA6FF00))),
                             onPressed: () {},

@@ -1,6 +1,9 @@
+import 'package:fit_pro/screens/auth/singUp_email&Social/signUp_with_email/signUpEmailScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class WelcomeScreens extends StatefulWidget {
   const WelcomeScreens({super.key});
@@ -89,7 +92,10 @@ class _WelcomeScreensState extends State<WelcomeScreens> {
                               backgroundColor: const Color(0xFFA6FF00),
                             ),
                             onPressed: () {
-
+                              Get.to(
+                                const SignUpWithEmail(),
+                                transition: Transition.rightToLeftWithFade
+                              );
                             },
                             child: const Text(
                               'Sign Up',

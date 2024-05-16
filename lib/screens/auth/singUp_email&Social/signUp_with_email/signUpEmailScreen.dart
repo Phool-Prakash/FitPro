@@ -28,7 +28,6 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               "assets/images/Bgimg.svg"),
           Positioned(
               top: 80,
-
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -36,7 +35,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                   const Center(
                     child: Text(
                       'FitPro',
-                      style: TextStyle(
+                        style: TextStyle(
                         color: Color(0xFFA6FF00),
                         fontSize: 40,
                         fontFamily: 'Orbitron',

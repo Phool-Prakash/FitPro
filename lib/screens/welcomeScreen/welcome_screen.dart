@@ -88,7 +88,9 @@ class _WelcomeScreensState extends State<WelcomeScreens> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFFA6FF00),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+
+                            },
                             child: const Text(
                               'Sign Up',
                               textAlign: TextAlign.center,

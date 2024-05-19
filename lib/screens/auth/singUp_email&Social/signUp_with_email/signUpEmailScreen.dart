@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -46,216 +47,57 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               fit: BoxFit.cover,
               "assets/images/Bgimg.svg"),
           Positioned(
-              top: 80,
+            top: 80,
+            left: leftPosition * 2.2,
+            child: Center(
+              child: Text(
+                'FitPro',
+                style: TextStyle(
+                  color: const Color(0xFFA6FF00),
+                  fontSize: 40.0 * widthScale,
+                  fontFamily: 'Orbitron',
+                  fontWeight: FontWeight.w900,
+                  height: 0,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: screenHeight * 0.30,
+              left:screenWidth * 0.07,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Center(
-                    child: Text(
-                      'FitPro',
-                      style: TextStyle(
-                        color: const Color(0xFFA6FF00),
-                        fontSize: 40.0 * widthScale,
-                        fontFamily: 'Orbitron',
-                        fontWeight: FontWeight.w900,
-                        height: 0,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 48.0 * heightScale,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      onTapBtnGoogle();
-                    },
-                    child: Container(
-                      width: 312.0 * widthScale,
-                      height: 48.0 * heightScale,
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 20.0 * widthScale,
-                          vertical: 12.0 * heightScale),
-                      decoration: ShapeDecoration(
-                          shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1.0 * widthScale,
-                                color: const Color(0xFF516580),
-                              ),
-                              borderRadius: BorderRadius.circular(100))),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset("assets/icons/Google.png"),
-                          SizedBox(
-                            width: 40.0 * widthScale,
+            children: [
+              InkWell(
+                onTap: () {
+                  onTapBtnGoogle();
+                },
+                child: Container(
+                  width: 312.0 * widthScale,
+                  height: 48.0 * heightScale,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 20.0 * widthScale,
+                      vertical: 12.0 * heightScale),
+                  decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 1.0 * widthScale,
+                            color: const Color(0xFF516580),
                           ),
-                          Text(
-                            'Continue with Google',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0 * widthScale,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09 * heightScale,
-                              letterSpacing: 0.30,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24.0 * heightScale,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      onTapBtnFacebook();
-                    },
-                    child: Container(
-                      width: 312.0 * widthScale,
-                      height: 48.0 * heightScale,
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 20.0 * widthScale,
-                          vertical: 12.0 * heightScale),
-                      decoration: ShapeDecoration(
-                          shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1.0 * widthScale,
-                                color: const Color(0xFF516580),
-                              ),
-                              borderRadius: BorderRadius.circular(100))),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset("assets/icons/Facebook.png"),
-                          SizedBox(
-                            width: 40.0 * widthScale,
-                          ),
-                          Text(
-                            'Continue with Facebook',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0 * widthScale,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09 * heightScale,
-                              letterSpacing: 0.30,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24.0 * heightScale,
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: 312.0 * widthScale,
-                      height: 48.0 * heightScale,
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 20.0 * widthScale,
-                          vertical: 12.0 * heightScale),
-                      decoration: ShapeDecoration(
-                          shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1.0 * widthScale,
-                                color: const Color(0xFF516580),
-                              ),
-                              borderRadius: BorderRadius.circular(100))),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset("assets/icons/Apple.png"),
-                          SizedBox(
-                            width: 40.0 * widthScale,
-                          ),
-                          Text(
-                            'Continue with Apple',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0 * widthScale,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09 * heightScale,
-                              letterSpacing: 0.30,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 48.0 * heightScale,
-                  ),
-                  Row(
+                          borderRadius: BorderRadius.circular(100))),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 200,
-                        height: 1,
-                        color: const Color.fromRGBO(43, 54, 69, 1),
-                      ),
+                      Image.asset("assets/icons/Google.png"),
                       SizedBox(
-                        width: 8.0 * widthScale,
+                        width: 40.0 * widthScale,
                       ),
                       Text(
-                        'OR',
+                        'Continue with Google',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: const Color(0xFFD1D2D4),
-                          fontSize: 16.0 * widthScale,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                          height: 0.09 * heightScale,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 8.0 * widthScale,
-                      ),
-                      Container(
-                        width: 200,
-                        height: 1,
-                        color: const Color.fromRGBO(43, 54, 69, 1),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 48.0 * heightScale,
-                  ),
-                  SizedBox(
-                    width: 312.0 * widthScale,
-                    height: 48.0 * heightScale,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.0 * widthScale,
-                            vertical: 12.0 * heightScale),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100)),
-                        backgroundColor: const Color(0xFFA6FF00),
-                      ),
-                      onPressed: () {
-                        Get.to(const SignUpWithEmail(),
-                            transition: Transition.rightToLeftWithFade);
-                      },
-                      child: Text(
-                        'Continue with Email',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color:const Color(0xFF181E26),
+                          color: Colors.white,
                           fontSize: 16.0 * widthScale,
                           fontFamily: 'Open Sans',
                           fontWeight: FontWeight.w700,
@@ -263,10 +105,165 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                           letterSpacing: 0.30,
                         ),
                       ),
-                    ),
-                  )
-                ],
-              )),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 24.0 * heightScale,
+              ),
+              InkWell(
+                onTap: () {
+                  onTapBtnFacebook();
+                },
+                child: Container(
+                  width: 312.0 * widthScale,
+                  height: 48.0 * heightScale,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 20.0 * widthScale,
+                      vertical: 12.0 * heightScale),
+                  decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 1.0 * widthScale,
+                            color: const Color(0xFF516580),
+                          ),
+                          borderRadius: BorderRadius.circular(100))),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icons/Facebook.png"),
+                      SizedBox(
+                        width: 40.0 * widthScale,
+                      ),
+                      Text(
+                        'Continue with Facebook',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0 * widthScale,
+                          fontFamily: 'Open Sans',
+                          fontWeight: FontWeight.w700,
+                          height: 0.09 * heightScale,
+                          letterSpacing: 0.30,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 24.0 * heightScale,
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  width: 312.0 * widthScale,
+                  height: 48.0 * heightScale,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 20.0 * widthScale,
+                      vertical: 12.0 * heightScale),
+                  decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 1.0 * widthScale,
+                            color: const Color(0xFF516580),
+                          ),
+                          borderRadius: BorderRadius.circular(100))),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icons/Apple.png"),
+                      SizedBox(
+                        width: 40.0 * widthScale,
+                      ),
+                      Text(
+                        'Continue with Apple',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0 * widthScale,
+                          fontFamily: 'Open Sans',
+                          fontWeight: FontWeight.w700,
+                          height: 0.09 * heightScale,
+                          letterSpacing: 0.30,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // SizedBox(
+              //   width: 312.0 * widthScale,
+              //   height: 48.0 * heightScale,
+              //   child: ElevatedButton(
+              //     style: ElevatedButton.styleFrom(
+              //       padding: EdgeInsets.symmetric(
+              //           horizontal: 20.0 * widthScale,
+              //           vertical: 12.0 * heightScale),
+              //       shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(100)),
+              //       backgroundColor: const Color(0xFFA6FF00),
+              //     ),
+              //     onPressed: () {
+              //       Get.to(const SignUpWithEmail(),
+              //           transition: Transition.rightToLeftWithFade);
+              //     },
+              //     child: Text(
+              //       'Continue with Email',
+              //       textAlign: TextAlign.center,
+              //       style: TextStyle(
+              //         color:const Color(0xFF181E26),
+              //         fontSize: 16.0 * widthScale,
+              //         fontFamily: 'Open Sans',
+              //         fontWeight: FontWeight.w700,
+              //         height: 0.09 * heightScale,
+              //         letterSpacing: 0.30,
+              //       ),
+              //     ),
+              //   ),
+              // )
+            ],
+          )),
+          Positioned(
+            top: topPosition * 1.6,
+            child:  Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(width: 100,),
+              Container(
+                height: 1,
+                color: const Color.fromRGBO(43, 54, 69, 1),
+              ),
+              SizedBox(
+                width: 8.0 * widthScale,
+              ),
+              Text(
+                'OR',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: const Color(0xFFD1D2D4),
+                  fontSize: 16.0 * widthScale,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w400,
+                  height: 0.09 * heightScale,
+                ),
+              ),
+              SizedBox(
+                width: 8.0 * widthScale,
+              ),
+              Container(
+                width:100 * widthScale,
+                height: 1,
+                color: const Color.fromRGBO(43, 54, 69, 1),
+              ),
+            ],
+          ), ),
           Positioned(
             bottom: 8,
             left: leftPosition,

@@ -34,38 +34,37 @@ class _WelcomeScreensState extends State<WelcomeScreens> {
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
+          width: double.infinity * widthScale,
+          height: double.infinity * heightScale,
           child: Stack(
             children: [
               Image.asset(
                 "assets/images/wel.png",
-                width: double.infinity,
-                height: double.infinity,
+                width: double.infinity * widthScale,
+                height: double.infinity * heightScale,
                 fit: BoxFit.fill,
               ),
-              Positioned(
-                top: topPosition,
-                left: leftPosition,
+              Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Center(
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 18.0 * heightScale),
-                        child: Text(
-                          'FitPro',
-                          style: TextStyle(
-                            color:const Color(0xFFA6FF00),
-                            fontSize: 40.0 * widthScale,
-                            fontFamily: 'Orbitron',
-                            fontWeight: FontWeight.w900,
-                            height: 0,
-                          ),
-                        ),
+                    SizedBox(
+                      height: screenHeight * 0.43,
+                    ),
+                    Text(
+                      'FitPro',
+                      style: TextStyle(
+                        color: const Color(0xFFA6FF00),
+                        fontSize: 40.0 * widthScale,
+                        fontFamily: 'Orbitron',
+                        fontWeight: FontWeight.w900,
+                        height: 0,
                       ),
                     ),
-                    const SizedBox(height: 40),
+                    SizedBox(
+                      height: heightScale * 43,
+                    ),
                     Text(
                       'Welcome to FitPro',
                       style: TextStyle(
@@ -77,90 +76,81 @@ class _WelcomeScreensState extends State<WelcomeScreens> {
                       ),
                     ),
                     SizedBox(
-                      height: 20.0 * heightScale,
+                      height: heightScale * 20.0,
                     ),
-                    Text(
+                    const Text(
                       'Where Every Breath Counts – Empowering You to\nBreathe Easy',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: const Color(0xFFD1D2D4),
-                        fontSize: 14.0 * widthScale,
+                        color: Color(0xFFD1D2D4),
+                        fontSize: 14,
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w600,
-                        // height: 0.10,
+                      ),
+                    ),
+                    SizedBox(
+                      height: heightScale * 70,
+                    ),
+                    SizedBox(
+                      width: 312 * widthScale,
+                      height: 48.0 * heightScale,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16 * widthScale,
+                              vertical: 12 * heightScale),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100)),
+                          backgroundColor: const Color(0xFFA6FF00),
+                        ),
+                        onPressed: () {
+                          Get.to(const SignUpWithEmail(),
+                              transition: Transition.rightToLeftWithFade);
+                        },
+                        child: Text(
+                          'Sign Up',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: const Color(0xFF181E26),
+                            fontSize: 16.0 * widthScale,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w700,
+                            height: 0.09,
+                            letterSpacing: 0.30,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.0 * heightScale),
+                    SizedBox(
+                      width: 312.0 * widthScale,
+                      height: 48.0 * heightScale,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 16.0 * widthScale,
+                                vertical: 12.0 * heightScale),
+                            backgroundColor: Colors.transparent,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100)),
+                            side: const BorderSide(color: Color(0xFFA6FF00))),
+                        onPressed: () {},
+                        child: Text(
+                          'Log In',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: const Color(0xFFA6FF00),
+                            fontSize: 16.0 * widthScale,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w700,
+                            height: 0.09,
+                            letterSpacing: 0.30,
+                          ),
+                        ),
                       ),
                     ),
                   ],
                 ),
-              ),
-              Positioned(
-                top: screenHeight * 0.75,
-                left: screenWidth * 0.10,
-                child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          width: 312 * widthScale,
-                          height: 48.0 * heightScale,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 16 * widthScale,
-                                  vertical: 12 * heightScale),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100)),
-                              backgroundColor: const Color(0xFFA6FF00),
-                            ),
-                            onPressed: () {
-                              Get.to(const SignUpWithEmail(),
-                                  transition: Transition.rightToLeftWithFade);
-                            },
-                            child: Text(
-                              'Sign Up',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: const Color(0xFF181E26),
-                                fontSize: 16.0 * widthScale,
-                                fontFamily: 'Open Sans',
-                                fontWeight: FontWeight.w700,
-                                height: 0.09,
-                                letterSpacing: 0.30,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 20.0 * heightScale),
-                        SizedBox(
-                          width: 312.0 * widthScale,
-                          height: 48.0 * heightScale,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 16.0 * widthScale,
-                                    vertical: 12.0 * heightScale),
-                                backgroundColor: Colors.transparent,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                side:
-                                    const BorderSide(color: Color(0xFFA6FF00))),
-                            onPressed: () {},
-                            child: Text(
-                              'Log In',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color:const Color(0xFFA6FF00),
-                                fontSize: 16.0 * widthScale,
-                                fontFamily: 'Open Sans',
-                                fontWeight: FontWeight.w700,
-                                height: 0.09,
-                                letterSpacing: 0.30,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )),
               )
             ],
           ),

@@ -1,4 +1,4 @@
-import 'package:fit_pro/screens/auth/singUp_email&Social/signUp_with_email/signUpEmailScreen.dart';
+import 'package:fit_pro/screens/auth/singUp_email&Social/signUp_social/signUp_with_socialMedia/signUpEmailScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

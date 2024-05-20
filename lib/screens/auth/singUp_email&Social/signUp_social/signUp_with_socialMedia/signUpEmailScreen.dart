@@ -6,8 +6,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../signUp_social/domain/facebookAuth/facebookAuth_helper.dart';
-import '../signUp_social/domain/googleAuth/googleAuth_helper.dart';
+import '../../signUp_social/domain/facebookAuth/facebookAuth_helper.dart';
+import '../../signUp_social/domain/googleAuth/googleAuth_helper.dart';
+import '../../signUp_with_email/signUp_with_email.dart';
 
 class SignUpWithEmail extends StatefulWidget {
   const SignUpWithEmail({super.key});
@@ -230,7 +231,7 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                         backgroundColor: const Color(0xFFA6FF00),
                       ),
                       onPressed: () {
-                        Get.to(const SignUpWithEmail(),
+                        Get.to(const SignUpWithEmail1(),
                             transition: Transition.rightToLeftWithFade);
                       },
                       child: Text(
@@ -252,73 +253,69 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
               SizedBox(
                 height: 150.0 * heightScale,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('By continuing forward, you agree to FitPro’s',
-                      textAlign: TextAlign.center,
+              RichText(
+                text:TextSpan(
+                  text: 'By continuing forward, you agree to FitPro’s\n',
+                  style: GoogleFonts.roboto(
+                    textStyle:TextStyle(
+                      color: const Color(0xFF8B8E92),
+                      fontSize: 14.0 * heightScale,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Privacy Policy',
                       style: GoogleFonts.roboto(
-                        textStyle: const TextStyle(
-                          color: Color(0xFF8B8E92),
-                          fontSize: 14,
+                        textStyle:TextStyle(
+                          color:const Color(0xFF8B8E92),
+                          fontSize: 14.0 * heightScale,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w400,
-                          height: 0.20,
+                          decoration: TextDecoration.underline,
+                          height: 0.10,
                         ),
-                      )),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TextButton(
-                        style: TextButton.styleFrom(
-                            disabledBackgroundColor: Colors.transparent),
-                        onPressed: () {},
-                        child: Text('Privacy Policy',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
-                              textStyle: const TextStyle(
-                                  color: Color(0xFF8B8E92),
-                                  fontSize: 14,
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w400,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: Color(0xFF8B8E92)
-                                  // height: 0.10,
-                                  ),
-                            )),
                       ),
-                      const Text(
-                        'and',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color(0xFF8B8E92),
-                          fontSize: 14,
+                      // recognizer: TapGestureRecognizer()
+                      //   ..onTap = () {
+                      //     _launchURL('https://www.yourprivacypolicyurl.com');
+                      //   },
+                    ),
+                    TextSpan(
+                      text: ' and ',
+                      style: GoogleFonts.roboto(
+                        textStyle: TextStyle(
+                          color:const Color(0xFF8B8E92),
+                          fontSize: 14.0 * heightScale,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w400,
                           height: 0.10,
                         ),
+                      )
+                    ),
+                    TextSpan(
+                      text: 'Terms & Conditions',
+                      style: GoogleFonts.roboto(
+                        textStyle:TextStyle(
+                          color:const Color(0xFF8B8E92),
+                          fontSize: 14.0 * heightScale,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w400,
+                          decoration: TextDecoration.underline,
+                          height: 0.10,
+                        ),
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text('Terms & Conditions',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
-                              textStyle: const TextStyle(
-                                  color: Color(0xFF8B8E92),
-                                  fontSize: 14,
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w400,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: Color(0xFF8B8E92)
-                                  // height: 0.10,
-                                  ),
-                            )),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                      // recognizer: TapGestureRecognizer()
+                      //   ..onTap = () {
+                      //     _launchURL('https://www.yourtermsandconditionsurl.com');
+                      //   },
+                    ),
+                    const TextSpan(
+                      text: '.',
+                    ),
+                  ],
+                ),)
             ],
           ))
         ],

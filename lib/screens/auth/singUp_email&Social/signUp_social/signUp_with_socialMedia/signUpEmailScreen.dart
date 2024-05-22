@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../signUp_social/domain/facebookAuth/facebookAuth_helper.dart';
 import '../../signUp_social/domain/googleAuth/googleAuth_helper.dart';
 import '../../signUp_with_email/signUp_with_email.dart';
@@ -254,10 +250,10 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                 height: 150.0 * heightScale,
               ),
               RichText(
-                text:TextSpan(
+                text: TextSpan(
                   text: 'By continuing forward, you agree to FitPro’s\n',
                   style: GoogleFonts.roboto(
-                    textStyle:TextStyle(
+                    textStyle: TextStyle(
                       color: const Color(0xFF8B8E92),
                       fontSize: 14.0 * heightScale,
                       fontFamily: 'Roboto',
@@ -265,11 +261,12 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                     ),
                   ),
                   children: [
+                    const TextSpan(text: "  "),
                     TextSpan(
                       text: 'Privacy Policy',
                       style: GoogleFonts.roboto(
-                        textStyle:TextStyle(
-                          color:const Color(0xFF8B8E92),
+                        textStyle: TextStyle(
+                          color: const Color(0xFF8B8E92),
                           fontSize: 14.0 * heightScale,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w400,
@@ -283,22 +280,21 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                       //   },
                     ),
                     TextSpan(
-                      text: ' and ',
-                      style: GoogleFonts.roboto(
-                        textStyle: TextStyle(
-                          color:const Color(0xFF8B8E92),
-                          fontSize: 14.0 * heightScale,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                          height: 0.10,
-                        ),
-                      )
-                    ),
+                        text: ' and ',
+                        style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                            color: const Color(0xFF8B8E92),
+                            fontSize: 14.0 * heightScale,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
+                            height: 0.10,
+                          ),
+                        )),
                     TextSpan(
                       text: 'Terms & Conditions',
                       style: GoogleFonts.roboto(
-                        textStyle:TextStyle(
-                          color:const Color(0xFF8B8E92),
+                        textStyle: TextStyle(
+                          color: const Color(0xFF8B8E92),
                           fontSize: 14.0 * heightScale,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w400,
@@ -315,7 +311,8 @@ class _SignUpWithEmailState extends State<SignUpWithEmail> {
                       text: '.',
                     ),
                   ],
-                ),)
+                ),
+              )
             ],
           ))
         ],

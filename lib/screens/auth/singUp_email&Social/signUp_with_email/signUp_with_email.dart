@@ -1,9 +1,12 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../../controller/auth/authController.dart';
 
 class SignUpWithEmail1 extends StatefulWidget {
   const SignUpWithEmail1({super.key});
@@ -15,6 +18,14 @@ class SignUpWithEmail1 extends StatefulWidget {
 class _SignUpWithEmail1State extends State<SignUpWithEmail1> {
   bool _isChecked = false;
   bool obscureText = true;
+  late EmailController emailController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    emailController = Get.put(EmailController());
+  }
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -71,6 +82,7 @@ class _SignUpWithEmail1State extends State<SignUpWithEmail1> {
                       Padding(
                         padding: const EdgeInsets.only(left: 16, right: 16),
                         child: TextFormField(
+                            onChanged: emailController.updateEmail,
                             style: GoogleFonts.roboto(
                               textStyle: TextStyle(
                                 color: const Color(0xFFD1D2D4),
@@ -232,8 +244,8 @@ class _SignUpWithEmail1State extends State<SignUpWithEmail1> {
                             backgroundColor: const Color(0xFFA6FF00),
                           ),
                           onPressed: () {
-                            // Get.to(SignUpScreen2(),
-                            //     transition: Transition.rightToLeftWithFade);
+                            Get.to(SecondScreen(),
+                                transition: Transition.rightToLeftWithFade);
                           },
                           child: Text(
                             'Sign Up',
@@ -398,4 +410,27 @@ class _SignUpWithEmail1State extends State<SignUpWithEmail1> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    Get.delete<EmailController>();
+    super.dispose();
+  }
 }
+
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final EmailController emailController = Get.find();
+    return Scaffold(
+      appBar: AppBar(title: Obx((){
+        return Text('${emailController.userEmail.value}');
+      }),),
+    );
+  }
+}
+

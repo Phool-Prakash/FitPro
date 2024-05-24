@@ -1,5 +1,7 @@
 import 'dart:ffi';
 
+import 'package:fit_pro/screens/auth/singUp_email&Social/signUp_with_email/otpScreen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -244,7 +246,7 @@ class _SignUpWithEmail1State extends State<SignUpWithEmail1> {
                             backgroundColor: const Color(0xFFA6FF00),
                           ),
                           onPressed: () {
-                            Get.to(SecondScreen(),
+                            Get.to(OtpScreen(),
                                 transition: Transition.rightToLeftWithFade);
                           },
                           child: Text(
@@ -360,10 +362,10 @@ class _SignUpWithEmail1State extends State<SignUpWithEmail1> {
                                   height: 0.10,
                                 ),
                               ),
-                              // recognizer: TapGestureRecognizer()
-                              //   ..onTap = () {
-                              //     _launchURL('https://www.yourprivacypolicyurl.com');
-                              //   },
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+
+                                },
                             ),
                             TextSpan(
                                 text: ' and ',

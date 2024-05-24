@@ -1,4 +1,5 @@
 import 'package:fit_pro/screens/auth/singUp_email&Social/signUp_with_email/signUp_with_email.dart';
+import 'package:fit_pro/screens/finishScreen/finish_Screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -114,7 +115,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       )),
                 ),
                 SizedBox(
-                  height:25 * heightScale,
+                  height: 25 * heightScale,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20.0),
@@ -219,7 +220,17 @@ class _OtpScreenState extends State<OtpScreen> {
                       _isResendActive
                           ? 'Resend code'
                           : 'Resend code in $_resendTime s',
-                      style: TextStyle(color: Colors.grey),
+                      style: GoogleFonts.roboto(
+                        textStyle: TextStyle(
+                          color: _isResendActive
+                              ? const Color(0xFFD1D2D4)
+                              : const Color(0xFF8B8E92),
+                          fontSize: 12 * heightScale,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w400,
+                          height: 0.11,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -230,7 +241,9 @@ class _OtpScreenState extends State<OtpScreen> {
                     width: double.infinity,
                     height: 48 * heightScale,
                     child: ElevatedButton(
-                      onPressed: _isButtonEnabled ? () {} : () {},
+                      onPressed: _isButtonEnabled ? () {
+                        Get.to(FinishScreen());
+                      } : () {},
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(100)),

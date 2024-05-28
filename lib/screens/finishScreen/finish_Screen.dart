@@ -1,5 +1,4 @@
-import 'package:fit_pro/main.dart';
-import 'package:fit_pro/testScreen.dart';
+import 'package:fit_pro/screens/Home/bottomNav/bottomNavMain.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -76,7 +75,7 @@ class _FinishScreenState extends State<FinishScreen> {
                   height: 48.0 * heightScale,
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.to(MyAppa());
+                      Get.to(BottomNav());
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFA6FF00),
